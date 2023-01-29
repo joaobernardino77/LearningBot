@@ -1,7 +1,6 @@
 import "./Message.css";
 import BouncerMessageLoader from "../generic/BouncerMessageLoader";
 import Avatar from "@mui/material/Avatar";
-import SmartToyIcon from "@mui/icons-material/SmartToy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRobot } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,10 +27,13 @@ const Message = ({
                     style={{ height: "40px", width: "40px", color: "white" }}
                   />
                 ) : (
-                  /*<SmartToyIcon
-                    style={{ height: "40px", width: "40px", color: "white" }}
-                  />*/
-                  <Avatar />
+                  <Avatar
+                    style={{
+                      height: "40px",
+                      width: "40px",
+                      backgroundColor: "#26a5ceff",
+                    }}
+                  />
                 )}
               </div>
               <div>{messageText}</div>

@@ -37,18 +37,18 @@ const UserInput = ({ submitMessage }) => {
             width: "100%",
             borderRadius: "0px 0px 14px 14px",
             backgroundColor: "lightskyblue",
-            backgroundImage: "linear-gradient(to right, plum, lightskyblue)",
+            backgroundImage: "linear-gradient(to right, #37abc8ff, #9955ffff)",
+            color: "white",
           },
           endAdornment: (
             <InputAdornment position="end">
               <IconButton
                 edge="end"
-                color="primary"
                 onClick={() => {
                   submitAndResetInput();
                 }}
               >
-                <SendIcon />
+                <SendIcon style={{ color: "white" }} />
               </IconButton>
             </InputAdornment>
           ),

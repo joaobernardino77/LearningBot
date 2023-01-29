@@ -5,6 +5,8 @@ import "./MessageArea.css";
 import Message from "./Message";
 import UserInput from "./UserInput";
 import toast from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRobot } from "@fortawesome/free-solid-svg-icons";
 
 const MessageArea = () => {
   const bottomRef = useRef(null);
@@ -80,6 +82,16 @@ const MessageArea = () => {
   return (
     <Grid className="MessageListMain" container direction="column" spacing={0}>
       <Grid item className="MessageListHeader" xs={1}>
+        <FontAwesomeIcon
+          icon={faRobot}
+          style={{
+            height: "40px",
+            width: "40px",
+            color: "white",
+            marginRight: "20px",
+            marginLeft: "60px",
+          }}
+        />
         <div>Learning AI BOT</div>
       </Grid>
       <Grid item className="MessageListChatArea" xs={10}>

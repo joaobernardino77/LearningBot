@@ -1,5 +1,5 @@
 .MessageListMain {
-  background-color: lightblue;
+  background-color: #d5f6ffff;
   height: 100%;
   width: 600px !important;
   margin: auto !important;
@@ -8,14 +8,13 @@
 
 .MessageListHeader {
   background-color: lightskyblue;
-  background-image: linear-gradient(to right, plum, lightskyblue);
+  background-image: linear-gradient(to right, #37abc8ff, #9955ffff);
   border-radius: 14px 14px 0px 0px;
   height: 100%;
   vertical-align: middle;
   line-height: 200%;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-weight: bold;
   font-size: 2rem;
 }
