@@ -31,7 +31,7 @@ Application made using React (client part) and Node.js(server part) with MongoDB
 
 ## Run
 
-- to run the server execute `nodemon` on the server folder
+- to run the server execute `npm start` on the server folder
 - to run the client execute `npm start` on the client folder
 
 ## Approach
