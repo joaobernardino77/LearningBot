@@ -1,6 +1,6 @@
 import messages from "../models/messages.js";
 import { createHelpers } from "./helpers.js";
-import { removeSpecialCharacters } from "../generic/generic.js";
+import { adjustStringToSearch } from "../generic/generic.js";
 
 const greetingMessage =
   "Welcome to Learning AI Bot, no learning topics are loaded at the moment but you can say hi :)";
@@ -40,12 +40,27 @@ export default class AIBot {
     }
     //for all categories wanted
     this.data.forEach((d) => {
+      //adjust topic that is going to be used as search key to retrieve bot response
+      //since topics are just for learning categories we don't want to do this for the other categories
+      if (d.category === "learning") {
+        d.topic = adjustStringToSearch(d.topic);
+      }
+
       //update the topics array if it is a new topic from the learning category
       this.buildTopics(d.topic, d.category);
 
       //get all the messages
       d.messages.forEach((m) => {
+        //adjust subject that is going to be used as search key to retrieve bot response
+        //since subjects are just for learning categories we don't want to do this for the other categories
+        if (d.category === "learning") {
+          m.subject = adjustStringToSearch(m.subject);
+        }
+
         m.user.forEach((u) => {
+          //adjust each user message that is going to be used as search key to retrieve bot response
+          u = adjustStringToSearch(u);
+
           this.buildSubjects(m.subject, d.topic, d.category);
           this.botMessages[u] = { bot: m.bot, subject: m.subject };
         });
@@ -98,7 +113,7 @@ export default class AIBot {
     }
     return {
       botResponse: this.getRandomResponse(
-        this.botMessages[removeSpecialCharacters(message)]
+        this.botMessages[adjustStringToSearch(message)]
       ),
       userMessage: message,
     };
